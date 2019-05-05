@@ -58,7 +58,7 @@ class Route
     {
         $action = isset($params['action']) ? $params['action'] : null;
         if (is_null($action)){
-            return $this->throw404('Ошибка приложения');
+            return $this->throw404('Application error');
         }
 
         list($ctrl, $method) = explode('@', $action);

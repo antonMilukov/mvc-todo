@@ -1,5 +1,7 @@
 <?php
 namespace App\Controllers;
+use App\Models\Task;
+
 class PublicController extends BaseController
 {
     public function index()
@@ -9,6 +11,8 @@ class PublicController extends BaseController
 
     public function showList()
     {
-        die("PublicController@index is!!!");
+        $tasks = Task::getInstance()->get();
+
+        die("PublicController@showList is!!!");
     }
 }
