@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 use App\Models\Task;
+use App\Services\Auth\AuthManager;
 
 class PublicController extends BaseController
 {

@@ -1,5 +1,5 @@
 <?php
-namespace App\Database;
+namespace App\Services\Database;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 

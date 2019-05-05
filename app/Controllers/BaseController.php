@@ -1,6 +1,6 @@
 <?php
 namespace App\Controllers;
-use App\View;
+use App\Services\View\View;
 
 class BaseController
 {

@@ -1,5 +1,5 @@
 <?php
-namespace  App;
+namespace  App\Services\View;
 class View
 {
     public $layout = 'app';
