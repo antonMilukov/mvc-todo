@@ -1,0 +1,19 @@
+{
+    "name": "root/app",
+    "authors": [
+        {
+            "name": "Anton Milukov",
+            "email": "anton.milukov@gmail.com"
+        }
+    ],
+    "require": {},
+    "repositories": [
+      {
+        "type": "path",
+        "url": "vendor/routing",
+        "options": {
+          "symlink": true
+        }
+      }
+    ]
+}
