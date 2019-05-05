@@ -12,8 +12,19 @@ class PublicController extends BaseController
     public function showList()
     {
         $currentPage = isset($_REQUEST['page']) ? $_REQUEST['page'] : null;
-        $tasks = Task::getInstance()->paginate(3, null, 'page', $currentPage);
-        $this->view->render('tasks', ['tasks' => $tasks]);
+        $tasks = Task::getInstance();
+
+        list($sortString, $sort, $sortDirection) = $this->_getTasksListSort();
+        if ($sort){
+            $tasks = $tasks->orderBy($sort, $sortDirection);
+        }
+
+        $tasks = $tasks->paginate(3, null, 'page', $currentPage);
+        $this->view->render('tasks', [
+            'tasks' => $tasks,
+            'sortString' => $sortString,
+            'page' => $currentPage
+        ]);
     }
 
     public function createTask()
@@ -25,5 +36,20 @@ class PublicController extends BaseController
     {
         Task::getInstance()->fill($_REQUEST)->save();
         $this->redirect('/tasks');
+    }
+
+    private function _getTasksListSort()
+    {
+        $sortString = $sort = isset($_REQUEST['sort']) ? $_REQUEST['sort'] : null;
+        $sortDirection = 'DESC';
+
+        if ($sortString){
+            if ($sortString[0] == '-'){
+                $sortDirection = 'ASC';
+                $sort = substr($sort, 1);
+            }
+        }
+
+        return [$sortString, $sort, $sortDirection];
     }
 }

@@ -6,6 +6,7 @@ class View
 
     public function fetchPartial($template, $params = array()){
         extract($params);
+        $view = $this;
         ob_start();
         include VIEW_PATH.'/'.$template.'.phtml';
         return ob_get_clean();

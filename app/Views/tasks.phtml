@@ -1,33 +1,36 @@
-
-<table class="table table-bordered">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>User name</th>
-        <th>Email</th>
-        <th>Description</th>
-        <th>Status</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php foreach ($tasks as $task):?>
+<form action="/tasks" method="get" id="tasks-form">
+    <input type="hidden" name="page" value="<?php echo $page?>">
+    <input type="hidden" name="sort" value="<?php echo $sortString?>" id="field-sort">
+    <table class="table table-bordered">
+        <thead>
         <tr>
-            <td><?php echo $task->id?></td>
-            <td><?php echo $task->username?></td>
-            <td><?php echo $task->email?></td>
-            <td><?php echo $task->text?></td>
-            <td><?php echo $task->statusReadable?></td>
+            <th>Id</th>
+            <th onclick="oTasks.order('username')"><i class='fas fa-sort'></i> User name</th>
+            <th onclick="oTasks.order('email')"><i class='fas fa-sort'></i> Email</th>
+            <th>Description</th>
+            <th onclick="oTasks.order('status')"><i class='fas fa-sort'></i> Status</th>
         </tr>
-    <?php endforeach;?>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="5">
-                <a href="/tasks/create" class="btn btn-success" role="button">Add new task</a>
-            </td>
-        </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+        <?php foreach ($tasks as $task):?>
+            <tr>
+                <td><?php echo $task->id?></a></td>
+                <td><?php echo $task->username?></td>
+                <td><?php echo $task->email?></td>
+                <td><?php echo $task->text?></td>
+                <td><?php echo $task->statusReadable?></td>
+            </tr>
+        <?php endforeach;?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <a href="/tasks/create" class="btn btn-success" role="button">Add new task</a>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
 
 <ul class="pagination">
     <!-- Previous Page Link -->
