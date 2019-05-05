@@ -42,7 +42,11 @@
     <!-- Next Page Link -->
     <?php if ($tasks->hasMorePages()): ?>
         <li><a href="<?php echo $tasks->nextPageUrl(); ?>" rel="next">Next &raquo;</a></li>
+        &nbsp;&nbsp;&nbsp;
+        <li><a href="<?php echo $tasks->url($tasks->lastPage()); ?>" rel="Last page">Last page</a></li>
     <?php else: ?>
         <li class="disabled"><span>Next &raquo;</span></li>
+        &nbsp;&nbsp;&nbsp;
+        <li class="disabled"><span>Last page</span></li>
     <?php endif; ?>
 </ul>
