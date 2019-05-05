@@ -35,7 +35,12 @@ class PublicController extends BaseController
 
     public function storeTask()
     {
-        Task::getInstance()->fill($_REQUEST)->save();
+        $input = [
+            'username' => $_REQUEST['username'],
+            'email' => $_REQUEST['email'],
+            'text' => $_REQUEST['text'],
+        ];
+        Task::getInstance()->fill($input)->save();
         $this->redirect('/tasks');
     }
 

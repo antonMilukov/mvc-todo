@@ -1,6 +1,8 @@
 <?php
 namespace App\Services\Route;
 
+use App\Services\Auth\AuthManager;
+
 class Route
 {
 
@@ -61,6 +63,13 @@ class Route
     protected function get($params)
     {
         $action = isset($params['action']) ? $params['action'] : null;
+
+        // check for auth
+        $isNeedAuth = isset($params['isNeedAuth']) ? $params['isNeedAuth'] : null;
+        if ($isNeedAuth && !AuthManager::getInstance()->isAuth()){
+            return $this->throw404('Application error');
+        }
+
         if (is_null($action)){
             return $this->throw404('Application error');
         }
@@ -72,8 +81,6 @@ class Route
             $params = [];
             $ctrl = new $ctrl();
             return $ctrl->$method($params);
-//            var_dump($ctrl);die;
-//            return call_user_func_array(array($ctrl, $method), $params);
         }
     }
 

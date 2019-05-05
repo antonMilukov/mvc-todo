@@ -12,9 +12,15 @@
         </tr>
         </thead>
         <tbody>
+        <?php $isAuth = \App\Services\Auth\AuthManager::getInstance()->isAuth();?>
         <?php foreach ($tasks as $task):?>
             <tr>
-                <td><?php echo $task->id?></a></td>
+                <?php if ($isAuth):?>
+                    <td><a href="/admin/tasks/edit?id=<?php echo $task->id?>"><?php echo $task->id?></a></td>
+                <?php else:?>
+                    <td><?php echo $task->id?></a></td>
+                <?php endif;?>
+
                 <td><?php echo $task->username?></td>
                 <td><?php echo $task->email?></td>
                 <td><?php echo $task->text?></td>
@@ -25,7 +31,12 @@
         <tfoot>
             <tr>
                 <td colspan="5">
-                    <a href="/tasks/create" class="btn btn-success" role="button">Add new task</a>
+                    <?php if ($isAuth):?>
+                        <a href="/admin/tasks/create" class="btn btn-success" role="button">Add new task</a>
+                    <?php else:?>
+                        <a href="/tasks/create" class="btn btn-success" role="button">Add new task</a>
+                    <?php endif;?>
+
                 </td>
             </tr>
         </tfoot>

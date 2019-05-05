@@ -27,4 +27,9 @@ class Task extends Eloquent
     {
         return isset(self::$STATUS_DATA[$this->status]) ? self::$STATUS_DATA[$this->status]['title'] : '-';
     }
+
+    public function getIsCompletedTaskAttribute()
+    {
+        return $this->status == self::STATUS_COMPLETED;
+    }
 }
