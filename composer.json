@@ -7,13 +7,9 @@
         }
     ],
     "require": {},
-    "repositories": [
-      {
-        "type": "path",
-        "url": "vendor/routing",
-        "options": {
-          "symlink": true
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
         }
-      }
-    ]
+    }
 }
