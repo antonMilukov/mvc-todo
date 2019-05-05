@@ -12,11 +12,11 @@
     <tbody>
     <?php foreach ($tasks as $task):?>
         <tr>
-            <td><?=$task->id?></td>
-            <td><?=$task->username?></td>
-            <td><?=$task->email?></td>
-            <td><?=$task->text?></td>
-            <td><?=$task->statusReadable?></td>
+            <td><?php echo $task->id?></td>
+            <td><?php echo $task->username?></td>
+            <td><?php echo $task->email?></td>
+            <td><?php echo $task->text?></td>
+            <td><?php echo $task->statusReadable?></td>
         </tr>
     <?php endforeach;?>
     </tbody>

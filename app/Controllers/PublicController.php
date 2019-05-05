@@ -16,13 +16,14 @@ class PublicController extends BaseController
         $this->view->render('tasks', ['tasks' => $tasks]);
     }
 
-    public function create()
+    public function createTask()
     {
-        $this->view->render('create-task', []);
+        $this->view->render('task-form', ['task' => new Task(), 'formAction' => '/tasks/store']);
     }
 
-    public function store()
+    public function storeTask()
     {
+        Task::getInstance()->fill($_REQUEST)->save();
         $this->redirect('/tasks');
     }
 }
