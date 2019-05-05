@@ -1,0 +1,48 @@
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>User name</th>
+        <th>Email</th>
+        <th>Description</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($tasks as $task):?>
+        <tr>
+            <td><?=$task->id?></td>
+            <td><?=$task->username?></td>
+            <td><?=$task->email?></td>
+            <td><?=$task->text?></td>
+            <td><?=$task->statusReadable?></td>
+        </tr>
+    <?php endforeach;?>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <a href="/tasks/create" class="btn btn-success" role="button">Add new task</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<ul class="pagination">
+    <!-- Previous Page Link -->
+    <?php if ($tasks->onFirstPage()): ?>
+        <li class="disabled"><span>&laquo; Previous</span></li>
+    <?php else: ?>
+        <li><a href="<?php echo $tasks->previousPageUrl(); ?>" rel="prev">&laquo; Previous</a></li>
+    <?php endif; ?>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <!-- Next Page Link -->
+    <?php if ($tasks->hasMorePages()): ?>
+        <li><a href="<?php echo $tasks->nextPageUrl(); ?>" rel="next">Next &raquo;</a></li>
+    <?php else: ?>
+        <li class="disabled"><span>Next &raquo;</span></li>
+    <?php endif; ?>
+</ul>

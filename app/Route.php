@@ -27,17 +27,21 @@ class Route
     private function __construct() {}
 
     public static function getURI(){
-        if(!empty($_SERVER['REQUEST_URI'])) {
-            return trim($_SERVER['REQUEST_URI'], '/');
+        $r = '';
+        if(empty($r) && !empty($_SERVER['REQUEST_URI'])) {
+            $r = trim($_SERVER['REQUEST_URI'], '/');
         }
 
-        if(!empty($_SERVER['PATH_INFO'])) {
-            return trim($_SERVER['PATH_INFO'], '/');
+        if(empty($r) && !empty($_SERVER['PATH_INFO'])) {
+            $r = trim($_SERVER['PATH_INFO'], '/');
         }
 
-        if(!empty($_SERVER['QUERY_STRING'])) {
-            return trim($_SERVER['QUERY_STRING'], '/');
+        if(empty($r) && !empty($_SERVER['QUERY_STRING'])) {
+            $r = trim($_SERVER['QUERY_STRING'], '/');
         }
+
+        $r = strtok($r,'?');
+        return $r;
     }
 
     public function send()
@@ -66,7 +70,10 @@ class Route
 
         if (class_exists($ctrl) && method_exists($ctrl, $method)){
             $params = [];
-            return call_user_func_array(array($ctrl, $method), $params);
+            $ctrl = new $ctrl();
+            return $ctrl->$method($params);
+//            var_dump($ctrl);die;
+//            return call_user_func_array(array($ctrl, $method), $params);
         }
     }
 

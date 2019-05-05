@@ -6,13 +6,23 @@ class PublicController extends BaseController
 {
     public function index()
     {
-        die("PublicController@index is!!!");
+        $this->view->render('home', []);
     }
 
     public function showList()
     {
-        $tasks = Task::getInstance()->get();
+        $currentPage = isset($_REQUEST['page']) ? $_REQUEST['page'] : null;
+        $tasks = Task::getInstance()->paginate(3, null, 'page', $currentPage);
+        $this->view->render('tasks', ['tasks' => $tasks]);
+    }
 
-        die("PublicController@showList is!!!");
+    public function create()
+    {
+        $this->view->render('create-task', []);
+    }
+
+    public function store()
+    {
+        $this->redirect('/tasks');
     }
 }

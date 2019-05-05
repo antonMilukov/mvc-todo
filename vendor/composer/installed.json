@@ -573,5 +573,51 @@
             "orm",
             "sql"
         ]
+    },
+    {
+        "name": "illuminate/pagination",
+        "version": "v5.5.44",
+        "version_normalized": "5.5.44.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/pagination.git",
+            "reference": "686b121987164d161fe3440f407014ad026bdbbc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/pagination/zipball/686b121987164d161fe3440f407014ad026bdbbc",
+            "reference": "686b121987164d161fe3440f407014ad026bdbbc",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.5.*",
+            "illuminate/support": "5.5.*",
+            "php": ">=7.0"
+        },
+        "time": "2017-10-13 15:07:13",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Illuminate\\Pagination\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylor@laravel.com"
+            }
+        ],
+        "description": "The Illuminate Pagination package.",
+        "homepage": "https://laravel.com"
     }
 ]

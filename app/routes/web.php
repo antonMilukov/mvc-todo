@@ -2,6 +2,7 @@
 
 return [
     ['', ['action' => 'PublicController@index']],
-    ['list', ['action' => 'PublicController@showList']]
-
+    ['tasks', ['action' => 'PublicController@showList']],
+    ['tasks/create', ['action' => 'PublicController@create']],
+    ['tasks/store', ['action' => 'PublicController@store']]
 ];
