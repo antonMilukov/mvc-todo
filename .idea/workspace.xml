@@ -4,18 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/Views/app.phtml" line="19" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c13895b-8b04-4005-9295-8a8911dabaec" name="Default Changelist" comment="* upd">
-      <change afterPath="$PROJECT_DIR$/app/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/PublicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/PublicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/Route/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Route/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Views/app.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/app.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Views/task-form.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/task-form.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Views/tasks.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Views/tasks.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="2c13895b-8b04-4005-9295-8a8911dabaec" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,47 +52,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Controllers/AdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Views/task-form.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://53f923f0-3903-4268-a138-8d80c6a392a3/schema/mvc/table/tasks">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-                <filter text="insert()" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Task.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="55" lean-forward="true" selection-start-line="32" selection-start-column="55" selection-end-line="32" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,8 +92,8 @@
       <find>redirec</find>
       <find>start</find>
       <find>get</find>
-      <find>AuthManager</find>
       <find>action</find>
+      <find>AuthManager</find>
     </findStrings>
     <replaceStrings>
       <replace>PUBLIC_DIR</replace>
@@ -209,14 +158,14 @@
         <option value="$PROJECT_DIR$/app/Services/Auth/AuthManager.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Controllers/PublicController.php" />
-        <option value="$PROJECT_DIR$/app/Bootstrap.php" />
         <option value="$PROJECT_DIR$/app/Services/Route/Route.php" />
         <option value="$PROJECT_DIR$/app/Views/tasks.phtml" />
         <option value="$PROJECT_DIR$/app/Views/app.phtml" />
         <option value="$PROJECT_DIR$/app/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/app/Models/Task.php" />
         <option value="$PROJECT_DIR$/app/Views/task-form.phtml" />
+        <option value="$PROJECT_DIR$/app/Controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/app/Bootstrap.php" />
       </list>
     </option>
   </component>
@@ -289,7 +238,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services/Database" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -334,7 +283,7 @@
       <updated>1557033304823</updated>
       <workItem from="1557033305984" duration="89000" />
       <workItem from="1557050606105" duration="741000" />
-      <workItem from="1557063317499" duration="31004000" />
+      <workItem from="1557063317499" duration="31247000" />
     </task>
     <task id="LOCAL-00001" summary="* upd">
       <created>1557063412448</created>
@@ -392,15 +341,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557097451138</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="* upd">
+      <created>1557099953622</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1557099953622</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39555000" />
+    <option name="totallyTimeSpent" value="39798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1017" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2497332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -788,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Views/task-form.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="240">
+          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
         </state>
       </provider>
     </entry>
