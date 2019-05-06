@@ -12,4 +12,4 @@ create table users
 alter table users
     add primary key (id);
 
-INSERT INTO mvc.users (id, login, password, created_at, updated_at) VALUES (1, 'admin', '123', '2019-05-05 22:37:26', '2019-05-05 22:37:36');
+INSERT INTO users (id, login, password, created_at, updated_at) VALUES (1, 'admin', '123', '2019-05-05 22:37:26', '2019-05-05 22:37:36');
