@@ -3,15 +3,27 @@ namespace App\Services\Route;
 
 use App\Services\Auth\AuthManager;
 
+/**
+ * Route class
+ *  - uses route files like app/routes/web.php and execute controller method described in file
+ * Class Route
+ * @package App\Services\Route
+ */
 class Route
 {
-
     private static $instance = null;
+
+    /** @var string - Path for routes */
     private $routesPath;
+
+    /** @var string - current Uri */
     protected $uri;
+
+    /** @var array - current routes parsed from routesPath */
     protected $routes = [];
 
     /**
+     * Init self instance and setting input params
      * @param null $routesPath
      * @return Route|null
      */
@@ -28,6 +40,10 @@ class Route
     private function __clone() {}
     private function __construct() {}
 
+    /**
+     * Return current Uri
+     * @return string
+     */
     public static function getURI(){
         $r = '';
         if(empty($r) && !empty($_SERVER['REQUEST_URI'])) {
@@ -46,6 +62,10 @@ class Route
         return $r;
     }
 
+    /**
+     * Main method for build application response
+     * - it compares current uri with routes from "routesPath", and if it true: run next method for get response
+     */
     public function send()
     {
         $this->routes = require_once($this->routesPath);
@@ -53,14 +73,19 @@ class Route
             list($uri, $params) = $route;
 
             if ($this->uri == $uri){
-                return $this->get($params);
+                return $this->getResponse($params);
             }
         }
 
         $this->throw404();
     }
 
-    protected function get($params)
+    /**
+     * Method for get response
+     * - processing input params for target route and run target method in controller
+     * @param $params
+     */
+    protected function getResponse($params)
     {
         $action = isset($params['action']) ? $params['action'] : null;
 
@@ -84,19 +109,18 @@ class Route
         }
     }
 
-    protected function saveRoute($uri, $params)
-    {
-        $this->routes[$uri]= [
-            'uri' => $uri,
-            'params' => $params
-        ];
-    }
-
+    /**
+     * Exit
+     */
     protected function sendSuccess()
     {
         exit(200);
     }
 
+    /**
+     * 404 page
+     * @param string $text
+     */
     protected function throw404($text = 'Page was not found')
     {
         header("HTTP/1.0 404 Not Found");

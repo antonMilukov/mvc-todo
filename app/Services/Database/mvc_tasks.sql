@@ -1,3 +1,5 @@
+create database mvc;
+use mvc;
 create table tasks
 (
     id         int(10) auto_increment,

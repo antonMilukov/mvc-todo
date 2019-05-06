@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Routes for web application
+ */
 return [
     ['', ['action' => 'PublicController@index']],
     ['tasks', ['action' => 'PublicController@showList']],

@@ -1,6 +1,11 @@
 <?php
 namespace App\Services\Session;
 
+/**
+ * Session manager
+ * Class SessionManager
+ * @package App\Services\Session
+ */
 class SessionManager {
     private static $instance = null;
 

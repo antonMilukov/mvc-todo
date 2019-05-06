@@ -4,11 +4,21 @@ namespace App\Services\Auth;
 use App\Models\User;
 use App\Services\Session\SessionManager;
 
+/**
+ * Auth manager
+ * - check authorization state for user, also contains authorization methods like "login", "logout"
+ * - presented as singleton
+ * Class AuthManager
+ * @package App\Services\Auth
+ */
 class AuthManager
 {
     private static $instance = null;
     private $user = null;
 
+    /**
+     * @return AuthManager|null
+     */
     public static function getInstance()
     {
         if (null === self::$instance)
@@ -21,6 +31,10 @@ class AuthManager
     private function __clone() {}
     private function __construct() {}
 
+    /**
+     * Check authorization state from session and database
+     * @return bool
+     */
     public function checkAuth()
     {
         $sessionAuthData = SessionManager::getInstance()->get('auth', null);
@@ -33,13 +47,19 @@ class AuthManager
                 $this->user = $userFromDB;
                 $r = true;
             } else {
-                // something wrong - delete
-                SessionManager::getInstance()->set('auth', null);
+                // something wrong - need to logout
+                $this->logout();
             }
         }
         return $r;
     }
 
+    /**
+     * Login by login and password input
+     * @param $login
+     * @param $pass
+     * @return bool
+     */
     public function login($login, $pass)
     {
         $userFromDB = User::getInstance()
@@ -57,16 +77,27 @@ class AuthManager
         return $r;
     }
 
+    /**
+     * Return authenticated user model
+     * @return null|User
+     */
     public function getUser()
     {
         return $this->user;
     }
 
+    /**
+     * @return bool
+     */
     public function isAuth()
     {
         return $this->user != null;
     }
 
+    /**
+     * Logout method
+     * - erase
+     */
     public function logout()
     {
         SessionManager::getInstance()->set('auth', null);
